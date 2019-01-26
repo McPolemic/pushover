@@ -26,7 +26,7 @@ func loadEnvIntoValues(formValues url.Values) url.Values {
 		formValues.Set("token", token)
 	}
 
-	if token == "" {
+	if user == "" {
 		log.Fatal("Need environment variable PUSHOVER_USER")
 	} else {
 		formValues.Set("user", user)
