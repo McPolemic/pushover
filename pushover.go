@@ -17,16 +17,14 @@ func main() {
 }
 
 func loadEnvIntoValues(formValues url.Values) url.Values {
-	token := os.Getenv("PUSHOVER_TOKEN")
-	user := os.Getenv("PUSHOVER_USER")
 
-	if token == "" {
+	if token := os.Getenv("PUSHOVER_TOKEN"); token == "" {
 		log.Fatal("Need environment variable PUSHOVER_TOKEN")
 	} else {
 		formValues.Set("token", token)
 	}
 
-	if user == "" {
+	if user := os.Getenv("PUSHOVER_USER"); user == "" {
 		log.Fatal("Need environment variable PUSHOVER_USER")
 	} else {
 		formValues.Set("user", user)
